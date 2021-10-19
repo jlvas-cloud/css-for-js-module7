@@ -15,7 +15,8 @@ const MiniStory = ({ id, image, title }) => {
 const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 8px;  
+  min-width: 200px; // added to allow for overflow
 `;
 
 const Image = styled.img`

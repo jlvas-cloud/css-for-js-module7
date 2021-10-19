@@ -41,9 +41,22 @@ const Heading = styled.h2`
 `;
 
 const Abstract = styled.p`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
   font-size: 1rem;
   margin-bottom: 1em;
   white-space: pre-wrap;
+
+  @media ${p=>p.theme.queries.ipadAndUp}{
+    -webkit-line-clamp: 14;
+  }
+
+  @media ${p=>p.theme.queries.laptopAndUp}{
+    -webkit-line-clamp: 10;
+  }
+
 `;
 
 const Location = styled.span`

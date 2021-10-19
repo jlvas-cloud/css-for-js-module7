@@ -8,7 +8,7 @@ import VisuallyHidden from '../VisuallyHidden';
 const Footer = () => {
   return (
     <Wrapper>
-      <MaxWidthWrapper>
+      <MaxWidthWrapper>        
         <TopRow>
           <nav>
             <TopNavList>
@@ -113,7 +113,7 @@ const Footer = () => {
               </li>
             </MainNavList>
           </nav>
-        </MainNavArea>
+        </MainNavArea>       
       </MaxWidthWrapper>
       <SubfooterWrapper>
         <MaxWidthWrapper>
@@ -142,8 +142,15 @@ const TopRow = styled.div`
   gap: 16px;
   color: var(--color-gray-300);
   font-size: 0.875rem;
-  border-bottom: 1px solid var(--color-gray-700);
+ // border-bottom: 1px solid var(--color-gray-700);
   padding: 24px 0;
+
+  @media ${p=>p.theme.queries.ipadAndUp}{
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 48px;
+  }
+
 `;
 
 const Social = styled.div`
@@ -162,6 +169,8 @@ const Social = styled.div`
 const TopNavList = styled.ul`
   display: flex;
   gap: 16px;
+  @media ${p=>p.theme.queries.laptopAndUp}{
+  }
 `;
 
 const MainNavArea = styled.div`
@@ -170,13 +179,20 @@ const MainNavArea = styled.div`
   gap: 32px;
   padding: 32px 0 48px;
   text-align: center;
+  border-top: 1px solid var(--color-gray-700);
+
+  @media ${p=>p.theme.queries.ipadAndUp}{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: start;
+  }
 `;
 
 const MainNavHeading = styled.h2`
   font-size: 1.125rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-gray-300);
-  margin-bottom: 8px;
+  margin-bottom: 8px;  
 `;
 
 const MainNavList = styled.ul`
@@ -196,6 +212,10 @@ const Subfooter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${p=>p.theme.queries.laptopAndUp}{
+    align-items: flex-start;
+  }
 `;
 
 const Logo = styled.a`
@@ -209,5 +229,10 @@ const Disclaimer = styled.p`
   font-size: 0.875rem;
   color: var(--color-gray-500);
 `;
+
+
+const TopMaxWidthWrapper = styled.div`
+
+`
 
 export default Footer;

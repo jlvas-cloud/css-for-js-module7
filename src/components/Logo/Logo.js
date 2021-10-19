@@ -22,6 +22,10 @@ const Wrapper = styled.div`
 const Link = styled.a`
   font-family: var(--font-family-logo);
   font-size: 3rem;
+
+  @media ${p=>p.theme.queries.laptopAndUp}{
+    font-size: 4rem;
+  }
 `;
 
 const TodaysDate = styled.p`
